@@ -19,17 +19,17 @@ export class AddproductComponent {
     this.productId = Number(routeParam.get('productId'));
     if (this.productId) {
       const product = getProduct(this.productId);
-      this.formElement = this.newForm(product.name, product.description, product.price);
-      this.title = "Edit Product";
-      // this.callToAction = this.callToEditProduct();
-    }
-    else {
-      this.formElement = this.newForm("", "", NaN);
-      this.title = "New Product";
-      // this.callToAction = this.callToAddProduct();
+      this.formElement = this.newForm(
+        product.name,
+        product.description,
+        product.price
+      );
+      this.title = 'Edit Product';
+    } else {
+      this.formElement = this.newForm('', '', NaN);
+      this.title = 'New Product';
     }
   }
-
 
   newForm = (name: String, desc: String, price: number) => {
     const form = new FormGroup({
@@ -40,31 +40,37 @@ export class AddproductComponent {
     return form;
   };
 
+  callToAction = () => {
+    console.log(this.productId);
+
+    if (this.productId) {
+      this.callToEditProduct();
+    } else {
+      this.callToAddProduct();
+    }
+  };
+
   callToAddProduct = () => {
     console.log(this.formElement.value);
     let productId = Math.max(...products.map((obj: { id: any; }) => obj.id)) + 1;
-    console.log(productId);
-    productId = (productId).toString() == "-Infinity" ? 1 : productId;
+    productId = productId.toString() == '-Infinity' ? 1 : productId;
     addProduct({
-      "id": productId,
-      "name": this.formElement.value.name,
-      "description": this.formElement.value.desc,
-      "price": this.formElement.value.price
-
+      id: productId,
+      name: this.formElement.value.name,
+      description: this.formElement.value.desc,
+      price: this.formElement.value.price,
     });
     this.router.navigate(['./']);
   };
 
   callToEditProduct = () => {
     editProduct(this.productId, {
-      "name": this.formElement.value.name,
-      "description": this.formElement.value.desc,
-      "price": this.formElement.value.price
+      name: this.formElement.value.name,
+      description: this.formElement.value.desc,
+      price: this.formElement.value.price,
     });
+    this.router.navigate(['./']);
   };
-
-
-
 }
 
 function subscribe() {
@@ -74,4 +80,3 @@ function subscribe() {
 function callToAddProduct() {
   throw new Error('Function not implemented.');
 }
-
