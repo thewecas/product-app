@@ -8,14 +8,10 @@ import { deleteProduct, products } from "../products";
 
 })
 export class ProductListingComponent {
+  // products: any[] = [];
   products = [...products];
+  eeNgOnChangersFeature() {
 
-  share() {
-    window.alert('The product has been shared!');
-  }
-
-  onNotify() {
-    window.alert("you will be notified when the product goes on sale");
   }
   calltoDelete(id: number) {
     deleteProduct(id);

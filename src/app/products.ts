@@ -22,7 +22,6 @@ export const editProduct = (id: number, object: Object) => {
     }
 };
 
-
 export const deleteProduct = (id: number) => {
     const index = products.findIndex((obj: { id: number; }) => obj.id === id);
     if (index !== -1) {
@@ -31,4 +30,9 @@ export const deleteProduct = (id: number) => {
     }
 
 
+};
+
+export const getProduct = (id: number) => {
+    const index = products.findIndex((obj: { id: number; }) => obj.id === id);
+    return products[index];
 };

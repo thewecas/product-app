@@ -25,9 +25,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListingComponent },
-      { path: 'products/:productId', component: ProductDetailsComponent },
-      { path: 'add-product', component: AddproductComponent }
+      // { path: '', component: ProductListingComponent },
+      { path: 'product/:productId', component: AddproductComponent },
+      { path: 'product', component: AddproductComponent }
     ])
   ],
   providers: [],

@@ -1,12 +1,17 @@
 <div class="add-product">
-    <h2>New Product</h2>
-    <form [formGroup]="form" (ngSubmit)="addProduct()" class="new-product-form">
-        <label for="name">Product Name</label>
+    <h2>{{title}}</h2>
+    <form [formGroup]="formElement" (ngSubmit)="callToAddProduct()" class="new-product-form">
+        <label for="name">Product name</label>
         <input type="text" name="name" placeholder="Product name" formControlName="name">
-        <label for="desc"></label>
-        <input type="text" name="desc" placeholder="Product description" formControlName="desc">
-        <label for="price">Price</label>
-        <input type="number" name="price" placeholder="Product price" min="0" formControlName="price">
-        <button class="btn">Save</button>
+        <label for="desc">Product description</label>
+        <textarea type="text" name="desc" placeholder="Product description" formControlName="desc"></textarea>
+        <label for="price">Product Price</label>
+        <input type="number" name="price" placeholder="Product price in $" min="0" formControlName="price"
+            class="price">
+        <div class="btn-container"><a routerLink="/" class="btn">Cancel</a>
+            <button class="btn">Save</button>
+        </div>
     </form>
 </div>
+
+<div class="backdrop"></div>
