@@ -1,0 +1,26 @@
+<div class="product-listing">
+    <h2>Products</h2>
+    <a class="new-product-btn btn" [routerLink]="['./add-product']">
+        <img src="../../assets/icons/add.svg" alt="" /> New</a>
+    <table class=" products-container">
+        <tr class="product table-header">
+            <td>Id</td>
+            <td>Product Name</td>
+            <td>Description</td>
+            <td>Price</td>
+            <td>Action</td>
+        </tr>
+        <tr class="product" *ngFor="let product of products">
+            <td class="product__id">{{product.id}}</td>
+            <td class="product__name">{{product.name}}</td>
+            <td class="product__description" *ngIf="product.description">{{product.description}}</td>
+            <td class="product__price">{{product.price | currency}}</td>
+            <td class="action-btns">
+                <a href="" class="btn edit-btn" [routerLink]="['/add-product']"><img src="../../assets/icons/pen.svg"
+                        alt=""></a>
+                <a href="" class="btn delete-btn" (click)="calltoDelete(product.id)"><img
+                        src="../../assets/icons/delete.svg" alt=""></a>
+            </td>
+        </tr>
+    </table>
+</div>

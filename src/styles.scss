@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./root";
+
+body {
+  width: min(1440px, 100%);
+  margin-inline: auto;
+  background-color: $prime-bg;
+}
+app-root {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+}
+app-sidebar {
+  grid-area: sidebar;
+}
+app-header {
+  grid-area: header;
+}
+.content {
+  grid-area: content;
+}

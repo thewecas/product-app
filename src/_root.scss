@@ -1,0 +1,47 @@
+$step-0: clamp(0.88rem, calc(0.77rem + 0.53vw), 1.13rem);
+$step-1: clamp(1.05rem, calc(0.9rem + 0.75vw), 1.41rem);
+$step-2: clamp(1.26rem, calc(1.05rem + 1.05vw), 1.76rem);
+$step-3: clamp(1.51rem, calc(1.22rem + 1.44vw), 2.2rem);
+$step-4: clamp(1.81rem, calc(1.42rem + 1.96vw), 2.75rem);
+$step-5: clamp(2.18rem, calc(1.65rem + 2.64vw), 3.43rem);
+$text: #cedad6;
+$prime-bg: #010403;
+$sec-bg: #0c1114;
+$prime-btn: #2d4f9f;
+$sec-btn: #3c4b53;
+$accent: #349834;
+$txt-head: "Montserrat", sans-serif;
+$txt-body: "Open Sans", sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Open+Sans:wght@400;500;600&display=swap");
+
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: $text;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn,
+.link {
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+}
+
+h1 {
+  font-weight: 400;
+  font-size: $step-4;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: $step-3;
+}
