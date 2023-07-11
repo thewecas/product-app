@@ -28,8 +28,6 @@ export const deleteProduct = (id: number) => {
         products.splice(index, 1);
         localStorage.setItem("products", JSON.stringify(products));
     }
-
-
 };
 
 export const getProduct = (id: number) => {

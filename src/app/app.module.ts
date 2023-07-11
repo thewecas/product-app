@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      // { path: '', component: ProductListingComponent },
+      { path: '', component: ProductListingComponent },
       { path: 'product/:productId', component: AddproductComponent },
       { path: 'product', component: AddproductComponent }
     ])
